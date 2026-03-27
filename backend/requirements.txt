@@ -7,4 +7,3 @@ pandas
 python-multipart
 Pillow
 pydantic[email]
-sentence-transformers

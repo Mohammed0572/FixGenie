@@ -1,29 +1,41 @@
-from sentence_transformers import SentenceTransformer, util
+import os
+import pickle
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
-# Initialize eagerly globally
-print("Initializing sentence-transformers semantic engine...")
+# Reuse the vectorizer from the classifier setup for memory efficiency
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(BASE_DIR, "models")
+VECTORIZER_PATH = os.path.join(MODELS_DIR, "vectorizer.pkl")
+
+print("Initializing lightweight TF-IDF similarity engine...")
 try:
-    similarity_model = SentenceTransformer("all-MiniLM-L6-v2")
+    with open(VECTORIZER_PATH, "rb") as f:
+        vectorizer = pickle.load(f)
 except Exception as e:
-    print(f"WARNING: SentenceTransformer model failed to load. Ensure pytorch is installed. Err: {e}")
-    similarity_model = None
+    print(f"WARNING: TF-IDF Vectorizer failed to load: {e}")
+    vectorizer = None
 
 def find_similar_issues(text: str, issues: list, top_n: int = 3) -> list:
-    if not similarity_model or not issues: return []
+    if not vectorizer or not issues: return []
     
-    corpus = [issue["text"] for issue in issues]
-    query_embedding = similarity_model.encode(text, convert_to_tensor=True)
-    corpus_embeddings = similarity_model.encode(corpus, convert_to_tensor=True)
+    # 1. Transform current bug text
+    query_vec = vectorizer.transform([text.lower()])
     
-    # Compute dot/cosine similarities natively
-    cos_scores = util.cos_sim(query_embedding, corpus_embeddings)[0]
+    # 2. Transform all historical bugs in this session
+    corpus_texts = [issue["text"].lower() for issue in issues]
+    corpus_vecs = vectorizer.transform(corpus_texts)
+    
+    # 3. Calculate Cosine Similarity
+    # Returns an array of shape (1, num_issues)
+    cos_scores = cosine_similarity(query_vec, corpus_vecs)[0]
     
     ranked = sorted(enumerate(cos_scores.tolist()), key=lambda x: x[1], reverse=True)
     
     results = []
     for idx, score in ranked[:top_n]:
-        # Semantic strings sit higher on cosine margins than sparse TF-IDF strings
-        if score > 0.40:
+        # Similarity threshold: 0.15 for TF-IDF (lower than dense embeddings)
+        if score > 0.15:
             issue = issues[idx]
             results.append({
                 "title": issue["title"],
@@ -34,11 +46,13 @@ def find_similar_issues(text: str, issues: list, top_n: int = 3) -> list:
     return results
 
 def check_duplicate(text: str, issues: list) -> str:
-    if not similarity_model or not issues: return "New Issue"
+    if not vectorizer or not issues: return "New Issue"
     
-    corpus = [issue["text"] for issue in issues]
-    query_embedding = similarity_model.encode(text, convert_to_tensor=True)
-    corpus_embeddings = similarity_model.encode(corpus, convert_to_tensor=True)
-    cos_scores = util.cos_sim(query_embedding, corpus_embeddings)[0]
+    query_vec = vectorizer.transform([text.lower()])
+    corpus_texts = [issue["text"].lower() for issue in issues]
+    corpus_vecs = vectorizer.transform(corpus_texts)
     
-    return "Duplicate" if max(cos_scores).item() > 0.85 else "New Issue"
+    cos_scores = cosine_similarity(query_vec, corpus_vecs)[0]
+    
+    # 0.80+ is a very strong match for TF-IDF
+    return "Duplicate" if (len(cos_scores) > 0 and max(cos_scores) > 0.80) else "New Issue"
