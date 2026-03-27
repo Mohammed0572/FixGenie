@@ -1,0 +1,131 @@
+text,label,priority
+button not working,UI,Low
+buttn nt workng,UI,Low
+btn is broken,UI,Medium
+clicking do nothing,UI,Medium
+login page not responsive,UI,High
+log in page unresponsive,UI,High
+page dosent fit,UI,Medium
+mobile view broked,UI,High
+alignment issue in homepage,UI,Low
+alignmnt wrong,UI,Low
+things look weird on home,UI,Low
+css broken,UI,Medium
+image not displaying properly,UI,Medium
+img missing,UI,Medium
+photo dotn show,UI,Low
+pic is blank,UI,Low
+ui color looks bad,UI,Low
+font is too small to read,UI,Medium
+header overlaps with content,UI,High
+hedr cut off,UI,High
+cant see the submit button,UI,High
+submit btn invisble,UI,High
+dropdown menu stuck,UI,Medium
+drpdown wont open,UI,Medium
+modal popup not closing,UI,High
+popup stuck on screen,UI,High
+text overflowing container,UI,Low
+text goes out of box,UI,Low
+dark mode hurts eyes,UI,Low
+dark thme bugged,UI,Low
+icon missing from navbar,UI,Low
+no icon in top bar,UI,Low
+carousel sliding too fast,UI,Low
+slider dizzy,UI,Low
+animation broken,UI,Medium
+anim glitching out,UI,Medium
+white screen of death on load,UI,High
+wsod on startup,UI,High
+sidebar doesnt expand,UI,Medium
+sidbar trapped,UI,Medium
+links are dead,UI,Medium
+hyperlink goto nowhere,UI,Medium
+footer looks ugly on tablet,UI,Low
+botm of page messed up,UI,Low
+hover effect stuck,UI,Low
+mous hover freezing,UI,Low
+tooltip covers the button,UI,Medium
+cant click under tool tp,UI,Medium
+
+server crash error,Backend,High
+servr crashed,Backend,High
+backend dead,Backend,High
+getting 500 eror,Backend,High
+database connection failed,Backend,High
+db fail,Backend,High
+cant connect to databse,Backend,High
+sql connection timeout,Backend,High
+API not responding,Backend,High
+api is slow,Backend,Medium
+endpont not workin,Backend,High
+getting 404 from api,Backend,Medium
+authentication failed error,Backend,High
+auth faild,Backend,High
+login reject me why,Backend,Medium
+token expired error,Backend,Medium
+null pointer exception,Backend,High
+npe in logs,Backend,High
+redis cache missed,Backend,Medium
+redis down,Backend,High
+payment gateway rejected txn,Backend,High
+stripe api error 502,Backend,High
+s3 upload failed,Backend,High
+cant upload image 500,Backend,High
+email not sending password reset,Backend,High
+didnt get pass reset email,Backend,High
+data not saving,Backend,High
+hit save but nothing in db,Backend,High
+cors origin error,Backend,Medium
+cors blocing request,Backend,Medium
+webhook timeout,Backend,Medium
+hook failing constantly,Backend,Medium
+microservice unhandled exception,Backend,Medium
+ms crashing randomly,Backend,Medium
+routing error in controller,Backend,High
+bad routing,Backend,High
+kafka consumer lag,Backend,Medium
+event stream broken,Backend,Medium
+jwt token decode fails,Backend,High
+cant read jwt,Backend,High
+database deadlock,Backend,High
+sql locked up,Backend,High
+foreign key constraint failed,Backend,Medium
+fk error on insert,Backend,Medium
+
+page loading very slow,Performance,Medium
+page to slow,Performance,Medium
+load takes forever,Performance,Medium
+website creeping,Performance,Medium
+application lagging,Performance,Medium
+app lag,Performance,Medium
+stuttering ui,Performance,Low
+hanging on screen,Performance,High
+high memory usage,Performance,High
+mem leak,Performance,High
+chrome taking too much ram,Performance,High
+compotr freezing,Performance,High
+dashboard takes 10 seconds to open,Performance,High
+dash slow,Performance,Medium
+infinite scroll jittery,Performance,Medium
+scroll is choppy,Performance,Medium
+high cpu on sorting table,Performance,Medium
+laptop fan loud when using site,Performance,Medium
+battery drains fast,Performance,Medium
+phone dies using app,Performance,Medium
+video buffering too long,Performance,Medium
+vid keeps stopping,Performance,Medium
+time to interactive is bad,Performance,High
+tti is over 15s,Performance,High
+bundle size too big,Performance,Low
+js file huge,Performance,Low
+api taking 5 secs to return,Performance,High
+backend call slowww,Performance,High
+database querying is extremely sluggish,Performance,High
+slow query reading,Performance,High
+excessive dom repaints,Performance,Medium
+dom renders too much,Performance,Medium
+lazy loading not working,Performance,Medium
+images loading all at once,Performance,Medium
+memory footprint growing over time,Performance,High
+app uses 2gb ram,Performance,High
