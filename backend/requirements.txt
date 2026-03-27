@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+passlib[bcrypt]
+scikit-learn
+pandas
+python-multipart
+Pillow
+pydantic[email]
+sentence-transformers

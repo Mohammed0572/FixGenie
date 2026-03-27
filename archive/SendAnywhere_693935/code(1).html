@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Triage AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#004c6e",
+              "on-surface-variant": "#3e4850",
+              "surface-bright": "#f7f9fb",
+              "surface-variant": "#e0e3e5",
+              "on-secondary-fixed-variant": "#234b64",
+              "outline-variant": "#bec8d2",
+              "secondary-fixed-dim": "#a5cbe9",
+              "secondary-fixed": "#c9e6ff",
+              "error-container": "#ffdad6",
+              "on-surface": "#191c1e",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#ffb86e",
+              "secondary-container": "#b8dffe",
+              "on-primary-fixed": "#001e2f",
+              "primary-fixed": "#c9e6ff",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-container": "#4d2b00",
+              "surface-container-highest": "#e0e3e5",
+              "outline": "#6e7881",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffdcbd",
+              "surface-tint": "#006591",
+              "primary-container": "#0ea5e9",
+              "primary": "#006591",
+              "on-secondary-fixed": "#001e2f",
+              "on-tertiary-fixed-variant": "#693c00",
+              "secondary": "#3c627d",
+              "surface-container": "#eceef0",
+              "error": "#ba1a1a",
+              "on-primary-container": "#003751",
+              "surface-dim": "#d8dadc",
+              "surface-container-high": "#e6e8ea",
+              "inverse-surface": "#2d3133",
+              "primary-fixed-dim": "#89ceff",
+              "on-secondary-container": "#3d637d",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#2c1600",
+              "inverse-primary": "#89ceff",
+              "tertiary-container": "#de8712",
+              "background": "#f7f9fb",
+              "surface": "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "tertiary": "#8a5100",
+              "on-background": "#191c1e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .dark .glass-panel {
+        background: rgba(25, 28, 30, 0.8);
+      }
+    </style>
+</head>
+<body class="bg-surface-container-low dark:bg-inverse-surface min-h-screen flex flex-col font-body transition-colors duration-300">
+<!-- Theme Toggle (Glassmorphic Pill) -->
+<div class="fixed top-6 right-6 z-50">
+<button class="glass-panel px-4 py-2 rounded-full flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-high transition-all shadow-sm" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
+<span class="text-xs font-bold font-label uppercase tracking-wider">Toggle Theme</span>
+</button>
+</div>
+<!-- Main Content Container -->
+<main class="flex-grow flex items-center justify-center p-6 md:p-24">
+<!-- Login Card -->
+<div class="w-full max-w-[480px] animate-in fade-in slide-in-from-bottom-4 duration-700">
+<!-- Logo/Brand Anchor (Editorial Precision) -->
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center p-3 rounded-xl bg-primary/10 dark:bg-primary/20 mb-4">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tighter text-on-surface mb-2">Triage AI</h1>
+<p class="font-body text-on-surface-variant text-sm">Editorial precision for AI-driven bug triage.</p>
+</div>
+<!-- Authentic Surface Layering -->
+<div class="bg-surface-container-lowest dark:bg-surface-dim rounded-xl shadow-[0_10px_40px_-10px_rgba(0,101,145,0.08)] overflow-hidden">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant/15">
+<button class="flex-1 py-4 text-sm font-bold font-label text-primary border-b-2 border-primary">Sign In</button>
+<button class="flex-1 py-4 text-sm font-medium font-label text-on-surface-variant hover:bg-surface-container-low transition-colors">Sign Up</button>
+</div>
+<div class="p-8 md:p-10">
+<form class="space-y-6">
+<!-- Email Input -->
+<div>
+<label class="block text-xs font-bold font-label uppercase tracking-[0.05em] text-on-surface-variant mb-2">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container dark:bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block text-xs font-bold font-label uppercase tracking-[0.05em] text-on-surface-variant">Password</label>
+<a class="text-[11px] font-bold text-primary hover:underline uppercase tracking-wider" href="#">Forgot Password?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full pl-12 pr-12 py-3 bg-surface-container dark:bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline transition-all" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Submit Button (Primary Gradient) -->
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform duration-200 active:scale-95" type="submit">
+                            Secure Log In
+                        </button>
+</form>
+<!-- Divider -->
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/20"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase tracking-widest font-bold">
+<span class="bg-surface-container-lowest dark:bg-surface-dim px-4 text-outline">or continue with</span>
+</div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors text-on-surface-variant font-label text-sm border border-outline-variant/10">
+<img alt="Google" class="w-5 h-5" data-alt="clean minimal google logo icon on transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOKc4zs59_ugYkCRS1zfNEMC3xyEhrUuXV8d0D9Hq5eyfjzLXzeEWeaLDFOu3VHJh6EOADm1Q7JH6dJTyWghrfURG_KKO1w5zrbmRsn4p4a59HewhCCCe0-VVnCpUK3V-XC7EMnm2xIuULAp2_9oWmYg3VAM5MynWo47G2QbJC55s7PFPWqOKK96ou2dvbrOoekUcvo6BUelwU6BuXp3INT5qRvyGEZwPwjhdgOAr4tMu-ld7huPZHBYgEf6d0NvHrUT2bGeK018M"/>
+<span>Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors text-on-surface-variant font-label text-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface">terminal</span>
+<span>GitHub</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Meta -->
+<p class="text-center mt-8 text-[11px] font-medium font-label text-on-surface-variant uppercase tracking-widest leading-loose">
+                v2.4 Powered by Machine Learning<br/>
+                © 2024 Triage AI Systems Inc.
+            </p>
+</div>
+</main>
+<!-- Side Graphic (Decorative AI Triage Visualization) -->
+<div class="hidden lg:block fixed left-12 bottom-12 max-w-xs opacity-40 mix-blend-multiply dark:mix-blend-screen pointer-events-none">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative p-6 glass-panel rounded-xl border border-white/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Live Analysis: Active Bugs (142)</span>
+</div>
+<div class="space-y-2">
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[70%]"></div>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[45%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

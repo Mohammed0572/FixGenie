@@ -1,0 +1,472 @@
+{
+    "cdf": [
+        {
+            "text": "server crashing",
+            "title": "server crashing",
+            "status": "Active",
+            "date": "Mar 27, 2026"
+        },
+        {
+            "id": "8db2cdc1-07f6-4cf0-b16b-1beae704a43c",
+            "text": "button not working",
+            "title": "button not working",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "Medium",
+                "confidence": 59,
+                "duplicate": "New Issue",
+                "title": "button not working",
+                "description": "The FixGenie dual-model ML engine classified this as a UI issue with Medium priority. Detection confidence: 59%. Context: New Issue.",
+                "similar_issues": [],
+                "fixes": [
+                    {
+                        "title": "Frontend Event Handling Fix",
+                        "steps": [
+                            "Inspect the browser console for JavaScript TypeErrors.",
+                            "Verify the onClick or onSubmit event binds correctly to the DOM.",
+                            "Check state management (Redux/Context) for dropped updates."
+                        ],
+                        "explanation": "UI failures generally occur when state updates are silently dropped or JavaScript throws silent errors."
+                    },
+                    {
+                        "title": "CSS / Layout Debugging",
+                        "steps": [
+                            "Open Chrome DevTools and inspect the element box model.",
+                            "Check for unclosed CSS tags or z-index overlapping.",
+                            "Verify mobile responsiveness across multiple viewport widths."
+                        ],
+                        "explanation": "Visual bugs are frequently caused by flexbox/grid mismanagement or CSS scope bleed."
+                    }
+                ],
+                "id": "8db2cdc1-07f6-4cf0-b16b-1beae704a43c"
+            }
+        },
+        {
+            "id": "e1ec21ce-6084-4970-96c1-b9a7bf72748f",
+            "text": "login not working",
+            "title": "login not working",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "Backend",
+                "labels": [
+                    "Backend",
+                    "Server",
+                    "API"
+                ],
+                "priority": "Medium",
+                "confidence": 37,
+                "duplicate": "New Issue",
+                "title": "login not working",
+                "description": "The FixGenie dual-model ML engine classified this as a Backend issue with Medium priority. Detection confidence: 37%. Context: New Issue.",
+                "similar_issues": [
+                    {
+                        "title": "button not working",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "51%"
+                    }
+                ],
+                "fixes": [
+                    {
+                        "title": "Validate Authentication API & Payloads",
+                        "steps": [
+                            "Check if the frontend is appending the correct Authorization headers.",
+                            "Verify the JWT token expiration and signature locally.",
+                            "Inspect the network tab (Status 401/403) to see which gateway is rejecting it."
+                        ],
+                        "explanation": "Authentication issues almost always stem from malformed tokens or disconnected OAuth providers."
+                    },
+                    {
+                        "title": "Database Credential Verification",
+                        "steps": [
+                            "Check the database connection strings.",
+                            "Ensure password hashing algorithms match (e.g., bcrypt vs pbkdf2).",
+                            "Verify if the user's account is locked due to rate limiting."
+                        ],
+                        "explanation": "If the API layer works, the database lookup or hash verification might be failing."
+                    }
+                ],
+                "id": "e1ec21ce-6084-4970-96c1-b9a7bf72748f"
+            }
+        }
+    ],
+    "abc": [
+        {
+            "id": "996bfcde-151d-43ab-a3af-ff79df616009",
+            "text": "button",
+            "title": "button",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "High",
+                "confidence": 63,
+                "duplicate": "New Issue",
+                "title": "Bug Report Analysis",
+                "description": "The FixGenie NLP pipeline classified this as a UI issue with High priority. Context: New Issue.",
+                "similar_issues": [],
+                "root_cause": "General unknown software behavior causing user workflow disruption.",
+                "fix_steps": [
+                    "Inspect the application console logs for exact trace errors.",
+                    "Reproduce the bug in the local staging environment.",
+                    "Ensure the latest package dependencies are successfully installed."
+                ],
+                "prevention": "Ensure adequate unit tests capture edge cases during CI/CD pipelines.",
+                "id": "996bfcde-151d-43ab-a3af-ff79df616009"
+            }
+        },
+        {
+            "id": "76a08fe4-6cff-4c10-9613-26c00fe96227",
+            "text": "server crashinh",
+            "title": "server crashinh",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "Backend",
+                "labels": [
+                    "Backend",
+                    "Server",
+                    "API"
+                ],
+                "priority": "High",
+                "confidence": 44,
+                "duplicate": "New Issue",
+                "title": "server crashinh",
+                "description": "The FixGenie NLP pipeline classified this as a Backend issue with High priority. Context: New Issue.",
+                "similar_issues": [],
+                "root_cause": "Unhandled system exception or null pointer trace leading to immediate task termination.",
+                "fix_steps": [
+                    "Check server application logs (stderr/stdout) for the exact trace.",
+                    "Identify the module throwing the exception.",
+                    "Add protective null/undefined checks around the failing variable."
+                ],
+                "prevention": "Implement widespread try-catch bounding and fallback error boundaries on the UI.",
+                "id": "76a08fe4-6cff-4c10-9613-26c00fe96227"
+            }
+        },
+        {
+            "id": "72cd34ba-b5de-497b-9e26-eac2f1b521e6",
+            "text": "server crash",
+            "title": "server crash",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "Backend",
+                "labels": [
+                    "Backend",
+                    "Server",
+                    "API"
+                ],
+                "priority": "High",
+                "confidence": 48,
+                "duplicate": "Duplicate",
+                "title": "server crash",
+                "description": "The FixGenie NLP pipeline classified this as a Backend issue with High priority. Context: Duplicate.",
+                "similar_issues": [
+                    {
+                        "title": "server crashinh",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "90%"
+                    }
+                ],
+                "root_cause": "Unhandled system exception or null pointer trace leading to immediate task termination.",
+                "fix_steps": [
+                    "Check server application logs (stderr/stdout) for the exact trace.",
+                    "Identify the module throwing the exception.",
+                    "Add protective null/undefined checks around the failing variable."
+                ],
+                "prevention": "Implement widespread try-catch bounding and fallback error boundaries on the UI. (Note: We detected 1 highly identical issues. Consolidate these tickets and resolve the root dependency bug!)",
+                "id": "72cd34ba-b5de-497b-9e26-eac2f1b521e6"
+            }
+        },
+        {
+            "id": "7fbbf3c5-42bb-4c16-bcb8-00b5114185f6",
+            "text": "output not found",
+            "title": "output not found",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "High",
+                "confidence": 37,
+                "duplicate": "New Issue",
+                "title": "output not found",
+                "description": "The FixGenie NLP pipeline classified this as a UI issue with High priority. Context: New Issue.",
+                "similar_issues": [],
+                "root_cause": "General unknown software behavior causing user workflow disruption.",
+                "fix_steps": [
+                    "Inspect the application console logs for exact trace errors.",
+                    "Reproduce the bug in the local staging environment.",
+                    "Ensure the latest package dependencies are successfully installed."
+                ],
+                "prevention": "Ensure adequate unit tests capture edge cases during CI/CD pipelines.",
+                "debug_steps": [
+                    "Reproduce the bug locally using the described steps",
+                    "Inspect the browser developer console for JavaScript warnings",
+                    "Check the React component state to ensure updates physically registered",
+                    "Verify frontend payload matches the exact API contract schema"
+                ],
+                "id": "7fbbf3c5-42bb-4c16-bcb8-00b5114185f6"
+            }
+        },
+        {
+            "id": "078bc33d-2d19-4101-9b68-d03a124498cb",
+            "text": "button missing",
+            "title": "button missing",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "Medium",
+                "confidence": 68,
+                "duplicate": "New Issue",
+                "title": "button missing",
+                "description": "The FixGenie NLP pipeline classified this as a UI issue with Medium priority. Context: New Issue.",
+                "similar_issues": [
+                    {
+                        "title": "button",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "78%"
+                    }
+                ],
+                "root_cause": "General unknown software behavior causing user workflow disruption.",
+                "fix_steps": [
+                    "Inspect the application console logs for exact trace errors.",
+                    "Reproduce the bug in the local staging environment.",
+                    "Ensure the latest package dependencies are successfully installed."
+                ],
+                "prevention": "Ensure adequate unit tests capture edge cases during CI/CD pipelines. (Note: We detected 1 highly identical issues. Consolidate these tickets and resolve the root dependency bug!)",
+                "debug_steps": [
+                    "Reproduce the bug locally using the described steps",
+                    "Inspect the browser developer console for JavaScript warnings",
+                    "Check the React component state to ensure updates physically registered",
+                    "Verify frontend payload matches the exact API contract schema"
+                ],
+                "id": "078bc33d-2d19-4101-9b68-d03a124498cb"
+            }
+        },
+        {
+            "id": "b8c30663-9e8a-4248-8ade-122bf42c5981",
+            "text": "Warning: View overlap detected in ConstraintLayout. Button submit_btn is obscured by overlapping view error_banner at coordinates (0,412).",
+            "title": "Warning: View overlap detected in ConstraintLayout...",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "High",
+                "confidence": 57,
+                "duplicate": "New Issue",
+                "title": "Warning: View overlap detected in ConstraintLayout. Button s",
+                "description": "The FixGenie NLP pipeline classified this as a UI issue with High priority. Context: New Issue.",
+                "similar_issues": [
+                    {
+                        "title": "button missing",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "44%"
+                    }
+                ],
+                "root_cause": "Unhandled system exception or null pointer trace leading to immediate task termination.",
+                "fix_steps": [
+                    "Check server application logs (stderr/stdout) for the exact trace.",
+                    "Identify the module throwing the exception.",
+                    "Add protective null/undefined checks around the failing variable."
+                ],
+                "prevention": "Implement widespread try-catch bounding and fallback error boundaries on the UI. (Note: We detected 1 highly identical issues. Consolidate these tickets and resolve the root dependency bug!)",
+                "debug_steps": [
+                    "Check server console logs for exact stack traces",
+                    "Identify the specific line number throwing the exception",
+                    "Verify the input payload wasn't null or undefined",
+                    "Add defensive try-catch boundaries around the failing module"
+                ],
+                "id": "b8c30663-9e8a-4248-8ade-122bf42c5981"
+            }
+        },
+        {
+            "id": "64e9076d-d6b7-4a44-b36a-95eb73f0e76e",
+            "text": "Warning: View overlap detected in ConstraintLayout. Button submit_btn is obscured by overlapping view error_banner at coordinates (0,412). Warning: View overlap detected in ConstraintLayout. Button submit_btn is obscured by overlapping view error_banner at coordinates (0,412).",
+            "title": "Warning: View overlap detected in ConstraintLayout...",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "High",
+                "confidence": 57,
+                "duplicate": "Duplicate",
+                "title": "Warning: View overlap detected in ConstraintLayout. Button s",
+                "description": "The FixGenie NLP pipeline classified this as a UI issue with High priority. Context: Duplicate.",
+                "similar_issues": [
+                    {
+                        "title": "Warning: View overlap detected in ConstraintLayout...",
+                        "status": "Active",
+                        "date": "Mar 27, 2026",
+                        "similarity": "98%"
+                    },
+                    {
+                        "title": "button missing",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "43%"
+                    }
+                ],
+                "root_cause": "Unhandled system exception or null pointer trace leading to immediate task termination.",
+                "fix_steps": [
+                    "Check server application logs (stderr/stdout) for the exact trace.",
+                    "Identify the module throwing the exception.",
+                    "Add protective null/undefined checks around the failing variable."
+                ],
+                "prevention": "Implement widespread try-catch bounding and fallback error boundaries on the UI. (Note: We detected 2 highly identical issues. Consolidate these tickets and resolve the root dependency bug!)",
+                "debug_steps": [
+                    "Check server console logs for exact stack traces",
+                    "Identify the specific line number throwing the exception",
+                    "Verify the input payload wasn't null or undefined",
+                    "Add defensive try-catch boundaries around the failing module"
+                ],
+                "id": "64e9076d-d6b7-4a44-b36a-95eb73f0e76e"
+            }
+        },
+        {
+            "id": "8163554f-64b4-464a-8fe5-a7891cdbca5b",
+            "text": "Warning: View overlap detected in ConstraintLayout. Button submit_btn is obscured by overlapping view error_banner at coordinates (0,412).",
+            "title": "Warning: View overlap detected in ConstraintLayout...",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "High",
+                "confidence": 57,
+                "duplicate": "Duplicate",
+                "title": "Warning: View overlap detected in ConstraintLayout. Button s",
+                "description": "The FixGenie NLP pipeline classified this as a UI issue with High priority. Context: Duplicate.",
+                "similar_issues": [
+                    {
+                        "title": "Warning: View overlap detected in ConstraintLayout...",
+                        "status": "Active",
+                        "date": "Mar 27, 2026",
+                        "similarity": "100%"
+                    },
+                    {
+                        "title": "Warning: View overlap detected in ConstraintLayout...",
+                        "status": "Active",
+                        "date": "Mar 27, 2026",
+                        "similarity": "98%"
+                    },
+                    {
+                        "title": "button missing",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "44%"
+                    }
+                ],
+                "root_cause": "Unhandled system exception or null pointer trace leading to immediate task termination.",
+                "fix_steps": [
+                    "Check server application logs (stderr/stdout) for the exact trace.",
+                    "Identify the module throwing the exception.",
+                    "Add protective null/undefined checks around the failing variable."
+                ],
+                "prevention": "Implement widespread try-catch bounding and fallback error boundaries on the UI. (Note: We detected 3 highly identical issues. Consolidate these tickets and resolve the root dependency bug!)",
+                "debug_steps": [
+                    "Check server console logs for exact stack traces",
+                    "Identify the specific line number throwing the exception",
+                    "Verify the input payload wasn't null or undefined",
+                    "Add defensive try-catch boundaries around the failing module"
+                ],
+                "id": "8163554f-64b4-464a-8fe5-a7891cdbca5b"
+            }
+        },
+        {
+            "id": "a18e2263-0727-428e-8fe9-8b2e3f4ca698",
+            "text": "button missing",
+            "title": "button missing",
+            "status": "Resolved",
+            "date": "Mar 27, 2026",
+            "analysis": {
+                "category": "UI",
+                "labels": [
+                    "UI/UX",
+                    "Frontend",
+                    "Visual"
+                ],
+                "priority": "Medium",
+                "confidence": 68,
+                "duplicate": "Duplicate",
+                "title": "button missing",
+                "description": "The FixGenie NLP pipeline classified this as a UI issue with Medium priority. Context: Duplicate.",
+                "similar_issues": [
+                    {
+                        "title": "button missing",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "100%"
+                    },
+                    {
+                        "title": "button",
+                        "status": "Resolved",
+                        "date": "Mar 27, 2026",
+                        "similarity": "78%"
+                    },
+                    {
+                        "title": "Warning: View overlap detected in ConstraintLayout...",
+                        "status": "Active",
+                        "date": "Mar 27, 2026",
+                        "similarity": "44%"
+                    }
+                ],
+                "root_cause": "General unknown software behavior causing user workflow disruption.",
+                "fix_steps": [
+                    "Inspect the application console logs for exact trace errors.",
+                    "Reproduce the bug in the local staging environment.",
+                    "Ensure the latest package dependencies are successfully installed."
+                ],
+                "prevention": "Ensure adequate unit tests capture edge cases during CI/CD pipelines. (Note: We detected 3 highly identical issues. Consolidate these tickets and resolve the root dependency bug!)",
+                "debug_steps": [
+                    "Reproduce the bug locally using the described steps",
+                    "Inspect the browser developer console for JavaScript warnings",
+                    "Check the React component state to ensure updates physically registered",
+                    "Verify frontend payload matches the exact API contract schema"
+                ],
+                "id": "a18e2263-0727-428e-8fe9-8b2e3f4ca698"
+            }
+        }
+    ]
+}
