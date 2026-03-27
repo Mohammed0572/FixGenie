@@ -1,5 +1,6 @@
 import { useLocation, useNavigate, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import API_BASE from '../config';
 
 function SkeletonLoader() {
   return (
@@ -51,7 +52,7 @@ export default function ResultsPage() {
     if (!data.id) return navigate('/bugs');
     try {
       const userId = localStorage.getItem("username") || "default";
-      const res = await fetch(`http://localhost:8000/issues/${userId}/${data.id}/resolve`, { method: "PATCH" });
+      const res = await fetch(`${API_BASE}/issues/${userId}/${data.id}/resolve`, { method: "PATCH" });
       if (res.ok) navigate('/bugs');
     } catch (err) {
       console.error("Failed to approve bug:", err);

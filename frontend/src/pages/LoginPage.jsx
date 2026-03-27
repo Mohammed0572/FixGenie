@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import API_BASE from '../config';
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export default function LoginPage() {
     setErrorMsg('');
     setLoading(true);
 
-    const endpoint = isSignUp ? "http://localhost:8000/signup" : "http://localhost:8000/login";
+    const endpoint = isSignUp ? `${API_BASE}/signup` : `${API_BASE}/login`;
     const payload = isSignUp ? { username, email, password } : { email, password };
 
     try {

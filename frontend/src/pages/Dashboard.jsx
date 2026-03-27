@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import API_BASE from '../config';
 
 export default function Dashboard() {
   const [issues, setIssues] = useState([]);
@@ -16,7 +17,7 @@ export default function Dashboard() {
     async function fetchUserStats() {
       try {
         const userId = storedUser || "default";
-        const res = await fetch(`http://localhost:8000/issues/${userId}`);
+        const res = await fetch(`${API_BASE}/issues/${userId}`);
         if (res.ok) {
           const data = await res.json();
           setIssues(data.reverse()); // latest first

@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_BASE from '../config';
 
 export default function NewReport() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export default function NewReport() {
       formData.append('text', '');
       formData.append('user_id', localStorage.getItem("username") || "default");
 
-      const res = await fetch('http://localhost:8000/predict-image', {
+      const res = await fetch(`${API_BASE}/predict-image`, {
         method: 'POST',
         body: formData,
       });
@@ -81,13 +82,13 @@ export default function NewReport() {
         formData.append('text', issueText);
         formData.append('user_id', userId);
 
-        res = await fetch('http://localhost:8000/predict-image', {
+        res = await fetch(`${API_BASE}/predict-image`, {
           method: 'POST',
           body: formData,
         });
       } else {
         // Standard JSON text-only
-        res = await fetch('http://localhost:8000/predict', {
+        res = await fetch(`${API_BASE}/predict`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ text: issueText, user_id: userId }),

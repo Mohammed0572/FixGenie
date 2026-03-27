@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_BASE from '../config';
 
 export default function BugQueue() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function BugQueue() {
     async function fetchIssues() {
       try {
         const userId = localStorage.getItem("username") || "default";
-        const res = await fetch(`http://localhost:8000/issues/${userId}`);
+        const res = await fetch(`${API_BASE}/issues/${userId}`);
         if (res.ok) {
           const data = await res.json();
           setIssues(data.reverse()); // Show newest first
@@ -27,7 +28,7 @@ export default function BugQueue() {
   const handleResolve = async (issueId) => {
     try {
       const userId = localStorage.getItem("username") || "default";
-      const res = await fetch(`http://localhost:8000/issues/${userId}/${issueId}/resolve`, {
+      const res = await fetch(`${API_BASE}/issues/${userId}/${issueId}/resolve`, {
         method: "PATCH"
       });
       if (res.ok) {
@@ -42,7 +43,7 @@ export default function BugQueue() {
   const handleView = async (issueId) => {
     try {
       const userId = localStorage.getItem("username") || "default";
-      const res = await fetch(`http://localhost:8000/issues/${userId}/${issueId}`);
+      const res = await fetch(`${API_BASE}/issues/${userId}/${issueId}`);
       if (res.ok) {
         const fullAnalysis = await res.json();
         navigate('/analyze', { state: { results: fullAnalysis } });
